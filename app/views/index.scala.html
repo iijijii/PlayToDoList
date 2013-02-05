@@ -1,7 +1,55 @@
-@(message: String)
-
-@main("Welcome to Play 2.0") {
-    
-    @play20.welcome(message, style = "Java")
-    
-}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1138.51">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Courier; color: #48484c; background-color: #f7f7f9}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Courier; color: #48484c; background-color: #f7f7f9; min-height: 17.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Courier; color: #dd1c44; background-color: #f7f7f9}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Courier; color: #93a1a1; background-color: #f7f7f9}
+    span.s1 {color: #93a1a1}
+    span.s2 {color: #008080}
+    span.s3 {color: #195f91}
+    span.s4 {color: #48484c}
+    span.s5 {color: #dd1c44}
+    span.s6 {color: #1d347b}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">@(</span>tasks<span class="s1">:</span> <span class="s2">List</span><span class="s1">[</span><span class="s2">Task</span><span class="s1">],</span> taskForm<span class="s1">:</span> <span class="s2">Form</span><span class="s1">[</span><span class="s2">Task</span><span class="s1">])</span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="s3">@import</span> helper<span class="s1">.</span>_</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s3">@main</span><span class="s1">(</span>"Todo list"<span class="s1">)</span><span class="s4"> </span><span class="s1">{</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span><span class="s5">&lt;h1&gt;</span><span class="s3">@tasks</span><span class="s1">.</span>size<span class="s1">()</span> task<span class="s1">(</span>s<span class="s1">)&lt;/</span>h1<span class="s1">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span><span class="s5">&lt;ul&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span><span class="s3">@for</span><span class="s1">(</span>task <span class="s1">&lt;-</span> tasks<span class="s1">)</span> <span class="s1">{</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span><span class="s5">&lt;li&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s3">@task</span><span class="s1">.</span>label</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s3">@form</span><span class="s1">(</span>routes<span class="s1">.</span><span class="s2">Application</span><span class="s1">.</span>deleteTask<span class="s1">(</span>task<span class="s1">.</span>id<span class="s1">))</span> <span class="s1">{</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">&lt;</span>input type<span class="s1">=</span><span class="s5">"submit"</span> value<span class="s1">=</span><span class="s5">"Delete"</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s1">}</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span><span class="s1">&lt;</span><span class="s5">/li&gt;</span></p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;/<span class="s4">ul</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span><span class="s5">&lt;h2&gt;</span><span class="s2">Add</span> a <span class="s6">new</span> task<span class="s1">&lt;/</span>h2<span class="s1">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span><span class="s3">@form</span><span class="s1">(</span>routes<span class="s1">.</span><span class="s2">Application</span><span class="s1">.</span>newTask<span class="s1">())</span> <span class="s1">{</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span><span class="s3">@inputText</span><span class="s1">(</span>taskForm<span class="s1">(</span><span class="s5">"label"</span><span class="s1">))</span><span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span><span class="s1">&lt;</span>input type<span class="s1">=</span><span class="s5">"submit"</span> value<span class="s1">=</span><span class="s5">"Create"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span><span class="s1">}</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p4">}</p>
+</body>
+</html>
