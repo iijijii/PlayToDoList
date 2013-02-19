@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Task {
 	public Long id;
+	@Required
 	public String label;
 
 	public static List<Task> all() {
