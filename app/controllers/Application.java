@@ -11,7 +11,7 @@ import models.*;
 
 public class Application extends Controller {
 
-	static Form<Task> taskForm = Form.form(Task.class);
+	static Form<Task> taskForm =form(Task.class);
 
 	public static Result index() {
         return redirect(routes.Application.tasks());
